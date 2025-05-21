@@ -1,11 +1,14 @@
-import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { SignOutButton } from "../components/SignOutButton";
+import { authClient } from "@/lib/auth-client";
 
 export default async function Home() {
-  const sessionResponse = await authClient.getSession();
-  const session = sessionResponse.data
-  
+  const { data: session, error } = await authClient.getSession()
+
+  if (error) {
+    console.error('Error fetching session:', error)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-indigo-950 text-white">
       <div className="max-w-5xl mx-auto px-4 py-16">

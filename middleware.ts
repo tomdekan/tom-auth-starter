@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getSessionCookie } from 'better-auth/cookies'
 
 export function middleware(req: NextRequest) {
-  const cookie = getSessionCookie(req) // This simply checks if the cookie is present, without needing to call the database on each request.
+  const cookie = getSessionCookie(req)
   if (!cookie) {
     return NextResponse.redirect(new URL('/sign-in', req.url))
   }
