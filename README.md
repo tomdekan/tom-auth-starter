@@ -4,11 +4,9 @@ This is a repo containing a starter template for auth for Next.js with BetterAut
 
 You can fork this and then start working on your new Next.js project rapidly.
 
-This is the final product of my guide here:
+See a video demo, with a full video to build this from scratch, here:
 [https://tomdekan.com/articles/google-sign-in-nextjs](https://tomdekan.com/articles/google-sign-in-nextjs)
 
-Demo video of the finished product is here:
-<video controls src="v-google-sign-in-nextjs.mp4" title="Title"></video>
 
 ## To run
 
