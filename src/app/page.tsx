@@ -1,10 +1,10 @@
-import { headers } from "next/headers";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { auth } from "../../auth";
 import { SignOutButton } from "../components/SignOutButton";
 
 export default async function Home() {
-  const session = await auth.api.getSession({ headers: await headers() });
+  const sessionResponse = await authClient.getSession();
+  const session = sessionResponse.data
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-indigo-950 text-white">

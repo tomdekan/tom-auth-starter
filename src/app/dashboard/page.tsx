@@ -1,9 +1,11 @@
-import { auth } from '../../../auth'
-import { headers } from 'next/headers'
-import { SignOutButton } from '../../components/SignOutButton'
 import { redirect } from 'next/navigation'
+import { SignOutButton } from '../../components/SignOutButton'
+import { authClient } from '@/lib/auth-client'
+
 export default async function Dashboard() {
-  const session = await auth.api.getSession({ headers: await headers() })
+  const sessionResponse = await authClient.getSession()
+  const session = sessionResponse.data
+
 
   if (!session) {
     redirect('/sign-in')

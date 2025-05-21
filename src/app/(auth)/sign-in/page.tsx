@@ -110,7 +110,7 @@ const SignIn = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Secure authentication powered by Better Auth
+            Tom's auth demo with Better Auth
           </motion.div>
         </motion.div>
       </div>
